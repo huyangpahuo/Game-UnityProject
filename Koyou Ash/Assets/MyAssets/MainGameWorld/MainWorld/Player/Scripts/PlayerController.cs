@@ -88,6 +88,8 @@ public class PlayerController : MonoBehaviour
         {
             isBagOpen = !isBagOpen;
             myBag.SetActive(isBagOpen);
+            //每次打开背包时刷新物品栏
+            InventoryManager.RefeshItem();
         }
     }
 }

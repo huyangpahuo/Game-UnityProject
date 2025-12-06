@@ -32,13 +32,28 @@ public class GameSaveManager : MonoBehaviour
         //使用Serializer对json字符串进行序列化并保存到文件
         formatter.Serialize(file,json);
         
+        //关闭文件
+        file.Close();
         
     }
 
     //从文件加载游戏数据
     public void LoadGame()
     {
-        
+        BinaryFormatter bf=new BinaryFormatter();
+
+        //首先判断存档文件是否存在
+        if (File.Exists(Application.persistentDataPath + "/game_SaveData/inventory.txt"))
+        {
+            //打开存档文件
+            FileStream file = File.Open(Application.persistentDataPath + "/game_SaveData/inventory.txt", FileMode.Open);
+            
+            //反序列化读取文件中的json字符串，并将其覆盖到myInventory对象中
+            JsonUtility.FromJsonOverwrite((string)bf.Deserialize(file),myInventory);
+            
+            //关闭文件
+            file.Close();
+        }
     }
 
 }

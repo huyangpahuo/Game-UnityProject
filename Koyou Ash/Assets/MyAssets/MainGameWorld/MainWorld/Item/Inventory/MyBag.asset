@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: MyBag
   m_EditorClassIdentifier: 
   itemList:
-  - {fileID: 11400000, guid: 7d1959bb1157d52439f76c056ad64885, type: 2}
   - {fileID: 11400000, guid: 45d774210be69b647b585e93b77fc77b, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 45d774210be69b647b585e93b77fc77b, type: 2}
+  - {fileID: 11400000, guid: 7d1959bb1157d52439f76c056ad64885, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

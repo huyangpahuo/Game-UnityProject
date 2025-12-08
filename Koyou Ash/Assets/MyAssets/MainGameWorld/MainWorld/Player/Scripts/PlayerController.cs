@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D mRig;
 
     //每秒移动速度
-    private float moveSpeed = 5f;
+    public float moveSpeed = 5f;
 
     //动画
     private Animator animator;
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
 
     void FrameSetup()
     {
-        //设置帧率为30
+        //设置帧率为60
         //这里垂直同步设置为1，表示每一帧都等待显示器刷新一次
         QualitySettings.vSyncCount = 1;
         Application.targetFrameRate = 60;

@@ -135,7 +135,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &4215705145393428352
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -168,7 +168,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.097663105, y: -0.24972263}
+  m_Offset: {x: -0.09422958, y: -0.3786099}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -179,7 +179,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.40497184, y: 0.8536163}
+  m_Size: {x: 0.2680416, y: 0.5665493}
   m_EdgeRadius: 0
 --- !u!114 &270321380656432587
 MonoBehaviour:
@@ -193,4 +193,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6653c1075d9bd2442b0de2f1fadb3e1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 4
   myBag: {fileID: 8328026467948968857, guid: 63045ae0d13b9604a8e025a6dc88b3fb, type: 3}

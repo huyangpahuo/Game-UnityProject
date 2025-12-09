@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D mRig;
 
     //每秒移动速度
-    public float moveSpeed = 5f;
+    public float moveSpeed = 4f;
 
     //动画
     private Animator animator;
@@ -78,6 +78,15 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Move X", lastMoveDir.x);
         animator.SetFloat("Move Y", lastMoveDir.y);
         animator.SetFloat("Speed", input.magnitude);
+
+        if (Input.GetKey(KeyCode.LeftShift)|| Input.GetKey(KeyCode.RightShift))
+        {
+            moveSpeed = 8f;
+        }
+        else
+        {
+            moveSpeed = 4f;
+        }
     }
 
     

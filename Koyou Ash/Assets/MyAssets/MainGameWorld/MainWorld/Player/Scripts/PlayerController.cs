@@ -19,6 +19,10 @@ public class PlayerController : MonoBehaviour
     public GameObject myBag;
     bool isBagOpen = false;
 
+    //键盘输入
+    private float horizontal;
+    private float vertical;
+
 
     void Start()
     {
@@ -57,18 +61,20 @@ public class PlayerController : MonoBehaviour
     void InputProcess()
     {
         //检测玩家输入
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
+        horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");
+        
+    }
 
+    void FixedUpdate()
+    {
         // 归一化输入向量,角色各个方向移动速度相同
         Vector2 input = new Vector2(horizontal, vertical).normalized;
-
-
+        
         Vector2 position = mRig.position;
         position += input * (moveSpeed * Time.deltaTime); // 匀速任意方向
         transform.position = position;
-
-
+        
         // 如果有输入（非零），则更新朝向
         if (input != Vector2.zero)
         {
@@ -81,14 +87,14 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift)|| Input.GetKey(KeyCode.RightShift))
         {
-            moveSpeed = 8f;
+            moveSpeed = 12f;
         }
         else
         {
-            moveSpeed = 4f;
+            moveSpeed = 6f;
         }
+        
     }
-
     
     //按B键打开背包
     void OpenMyBag()

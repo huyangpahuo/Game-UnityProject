@@ -702,13 +702,13 @@ MonoBehaviour:
   showArea: 1
   areaColor: {r: 0, g: 1, b: 0, a: 0.2}
   prefabs:
-  - {fileID: 5219693226175721485, guid: 050c802e9ba575049a503bc4cebc6199, type: 3}
-  - {fileID: 7989648210074880729, guid: 4f8da04b503196f4383f85038d739482, type: 3}
-  - {fileID: 5329885842133116248, guid: eab62ace835bbab4f86be4c15449726e, type: 3}
-  - {fileID: 1713162084801260970, guid: a46109ba561369e428c1867853ae27af, type: 3}
-  - {fileID: 3518420341482429705, guid: f06b0f8dc536e714cbc457e310630e68, type: 3}
-  - {fileID: 2913002222377089510, guid: 0eecc61c0870a094dba4187a363e098d, type: 3}
-  - {fileID: 2260017136851311634, guid: f91b9611b6ad612448dd2739db7e4963, type: 3}
+  - {fileID: 919940462015710408, guid: c4b46d4f8f4a5184390f8c2515a8ea30, type: 3}
+  - {fileID: 2276251062509086993, guid: 1ed6ad2c7b549324ebac8cd4c52c7654, type: 3}
+  - {fileID: 2726660652209123666, guid: e6c18edcb791e8e4aa89000aeda7e71a, type: 3}
+  - {fileID: 2682403962352009961, guid: fdfda96f164a416459a53e794564a148, type: 3}
+  - {fileID: 7149054263158627861, guid: f335fefb92359954da17264ee27037e0, type: 3}
+  - {fileID: 883902950980655535, guid: c519d8687837d1242b922a74b720b297, type: 3}
+  - {fileID: 3452134482109087937, guid: 9863120d8ebb64a4d910a295d65c0805, type: 3}
   maxObjects: 15
   moveSpeedMin: 0.5
   moveSpeedMax: 2

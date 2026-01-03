@@ -7,7 +7,7 @@ SendMode "Input"
 ; =========================
 global ColorGui := 0
 global CustomGui := 0
-global InfoGui   := 0
+global InfoGui := 0
 global CustomHex := "FF0000"
 
 
@@ -15,7 +15,7 @@ global CustomHex := "FF0000"
 ; 仅在 Typora 生效
 ; =========================
 #HotIf WinActive("ahk_exe Typora.exe")
-^!c::ShowColorGui()
+^!c:: ShowColorGui()
 #HotIf
 
 
@@ -49,7 +49,7 @@ ShowColorGui()
 
     ; ===== 顶部按钮 =====
     ; 按钮宽 120，中间间距 20
-    infoBtn   := ColorGui.AddButton("xm w120", "使用说明(必看)")
+    infoBtn := ColorGui.AddButton("xm w120", "使用说明(必看)")
     customBtn := ColorGui.AddButton("x+20 yp w120", "自定义颜色")
 
     infoBtn.OnEvent("Click", (*) => ShowInfoGui())
@@ -57,21 +57,21 @@ ShowColorGui()
 
     ; ===== 颜色定义 =====
     colors := [
-        ["DarkOrange","焦橙色"], ["Red","红色"], ["LightSkyBlue","天蓝"],
-        ["Turquoise","绿松石"], ["MediumVioletRed","紫红"], ["Teal","蓝绿色"],
-        ["Gold","金黄色"], ["DimGray","灰黑色"], ["DeepPink","亮粉色"],
-        ["DodgerBlue","亮蓝"], ["LimeGreen","鲜绿"], ["OrangeRed","橙红"],
-        ["SlateBlue","岩蓝"], ["Chocolate","巧克力"], ["Crimson","深红"],
-        ["SeaGreen","海绿"], ["SteelBlue","钢蓝"], ["Black","纯黑"]
+        ["DarkOrange", "焦橙色"], ["Red", "红色"], ["LightSkyBlue", "天蓝"],
+        ["Turquoise", "绿松石"], ["MediumVioletRed", "紫红"], ["Teal", "蓝绿色"],
+        ["Gold", "金黄色"], ["DimGray", "灰黑色"], ["DeepPink", "亮粉色"],
+        ["DodgerBlue", "亮蓝"], ["LimeGreen", "鲜绿"], ["OrangeRed", "橙红"],
+        ["SlateBlue", "岩蓝"], ["Chocolate", "巧克力"], ["Crimson", "深红"],
+        ["SeaGreen", "海绿"], ["SteelBlue", "钢蓝"], ["Black", "纯黑"]
     ]
 
     ColorHex := Map(
-        "DarkOrange","FF8C00","Red","FF0000","LightSkyBlue","87CEFA",
-        "Turquoise","40E0D0","MediumVioletRed","C71585","Teal","008080",
-        "Gold","FFD700","DimGray","696969","DeepPink","FF1493",
-        "DodgerBlue","1E90FF","LimeGreen","32CD32","OrangeRed","FF4500",
-        "SlateBlue","6A5ACD","Chocolate","D2691E","Crimson","DC143C",
-        "SeaGreen","2E8B57","SteelBlue","4682B4","Black","000000"
+        "DarkOrange", "FF8C00", "Red", "FF0000", "LightSkyBlue", "87CEFA",
+        "Turquoise", "40E0D0", "MediumVioletRed", "C71585", "Teal", "008080",
+        "Gold", "FFD700", "DimGray", "696969", "DeepPink", "FF1493",
+        "DodgerBlue", "1E90FF", "LimeGreen", "32CD32", "OrangeRed", "FF4500",
+        "SlateBlue", "6A5ACD", "Chocolate", "D2691E", "Crimson", "DC143C",
+        "SeaGreen", "2E8B57", "SteelBlue", "4682B4", "Black", "000000"
     )
 
     ; ===== 布局参数 =====
@@ -79,10 +79,10 @@ ShowColorGui()
     rowH := 28    ; 色块高度
     gapY := 6     ; 上下间距
     startY := 45  ; 第一行颜色的起始Y坐标（稍微拉开一点点与按钮的距离，更好看）
-    
+
     ; 这里的 gapX 必须等于顶部两个按钮的间距 (20)
     ; 计算右列的 X 偏移量：左边距(xm) + 按钮宽(120) + 间距(20) = 140
-    
+
     Loop colors.Length
     {
         c := colors[A_Index][1]
@@ -96,19 +96,19 @@ ShowColorGui()
         ; 如果是左列(0)，位置就是 xm
         ; 如果是右列(1)，位置就是 xm+140 (即 xm + 宽度120 + 间距20)
         xPosStr := (col == 0) ? "xm" : "xm+140"
-        
+
         ; 计算 Y 坐标
         yPos := startY + row * (rowH + gapY)
 
         ; 添加色块
         ; 0x200 保证垂直居中
         t := ColorGui.AddText(
-            xPosStr " y" yPos " w" colW " h" rowH 
-            " 0x200 Center Border Background" ColorHex[c], 
+            xPosStr " y" yPos " w" colW " h" rowH
+            " 0x200 Center Border Background" ColorHex[c],
             n
         )
 
-        t.SetFont(c="Black"||c="Crimson"||c="SlateBlue" ? "cWhite":"cBlack")
+        t.SetFont(c = "Black" || c = "Crimson" || c = "SlateBlue" ? "cWhite" : "cBlack")
         t.Tag := c
         t.OnEvent("Click", ApplyColorFromText)
     }

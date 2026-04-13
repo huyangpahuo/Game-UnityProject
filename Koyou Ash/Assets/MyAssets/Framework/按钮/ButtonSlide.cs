@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace MyAssets.Codes.Framework
+namespace MyAssets.Framework
 {
     public class ButtonSlide : MonoBehaviour
     {
@@ -12,7 +12,8 @@ namespace MyAssets.Codes.Framework
             Down
         }
 
-        [Header("移动模式选择")] [Tooltip("是否使用自定义终点位置，如果勾选则禁用距离选项")]
+        [Header("移动模式选择")]
+        [Tooltip("是否使用自定义终点位置，如果勾选则禁用距离选项")]
         public bool useCustomTarget = false;
 
         [Header("自定义终点（当 useCustomTarget = true 时启用）")]
@@ -23,7 +24,8 @@ namespace MyAssets.Codes.Framework
 
         public float distance = 500f;
 
-        [Header("运动参数")] [Tooltip("初速度（像素/秒）")]
+        [Header("运动参数")]
+        [Tooltip("初速度（像素/秒）")]
         public float initialSpeed = 800f;
 
         [Tooltip("加速度（默认为0时自动计算，使末速度为0）")] public float acceleration = 0f;
